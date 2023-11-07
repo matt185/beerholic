@@ -1,11 +1,16 @@
 import React from 'react';
 
+import { Layout } from './components/Layout'
+import './styles/index.scss';
+
 
 function App() {
   return (
-    <div className="App">
-      home
-    </div>
+    <>
+      <Layout>
+
+      </Layout>
+    </>
   );
 }
 

@@ -1,0 +1,23 @@
+@import '../variables.scss';
+
+.layout_header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.layout_body {
+    margin-top: $headerHeight;
+    margin-bottom: $footerHeight;
+    height: calc(100vh - #{$headerHeight}-#{$footerHeight});
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

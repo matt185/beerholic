@@ -1,0 +1,98 @@
+// colors
+$dark: rgb(29, 29, 29);
+$gray: rgb(138, 135, 135);
+$light: #fff;
+$primary: rgb(162, 162, 246);
+$purple:rgb(108,42,255);
+$bg: rgb(244, 244, 255);
+$lgBlue:rgb(97, 219, 251);
+$policeBlue:rgb(52, 73, 94);
+$mint:rgba(65, 184, 131);
+$pink:rgb(233, 30, 99);
+// spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+// border radius
+$borderRadius: 12px;
+// header footer height
+$headerHeight: 100px;
+$footerHeight: 80px;
+// max width
+$maxWidth: 1280px;
+
+// shadow style
+@mixin shadow_white {
+    text-shadow: 5px 3px 4px $light
+}
+
+@mixin shadow {
+    text-shadow: 5px 3px 4px $dark
+}
+
+@mixin shadow-gray {
+    text-shadow: 5px 3px 4px $gray
+}
+
+@mixin shadow-blue {
+    text-shadow: 5px 3px 4px $lgBlue
+}
+
+@mixin shadow-mint {
+    text-shadow: 5px 3px 4px $mint
+}
+
+@mixin shadow-purple {
+    text-shadow: 5px 3px 4px $purple
+}
+
+@mixin icon-shadow {
+    filter: drop-shadow(5px 3px 4px $dark)
+}
+
+@mixin icon-shadow-light {
+    filter: drop-shadow(5px 3px 4px $light)
+}
+
+@mixin icon-shadow-mint {
+    filter: drop-shadow(5px 3px 4px $mint)
+}
+
+@mixin boxShadow_white {
+    box-shadow: 5px 3px 4px $light
+}
+
+@mixin breakpoint($point) {
+    @if $point==md {
+        // 768px
+        @media (min-width: 48em) {
+            @content;
+        }
+    }
+    @if $point==sm {
+        // 459px
+        @media (max-width: 28em) {
+            @content;
+        }
+    }
+    @if $point==sm {
+        //415px
+        @media (max-width: 25.9em) {
+            @content;
+        }
+    }
+    @if $point==xsm {
+        //375px
+        @media (max-width: 23.5em) {
+            @content;
+        }
+    }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(180deg)rotateY(0deg) rotateZ(-180deg);
+  }
+}
