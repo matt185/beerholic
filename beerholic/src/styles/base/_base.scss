@@ -8,6 +8,10 @@ body {
     width: 100%;
     color: $dark;
     background: rgb(255,255,255);
+    background: -moz-linear-gradient(-45deg, rgb(230,230,255) 0%, rgb(108,42,255) 100%);
+    background: -webkit-linear-gradient(-45deg, rgb(230,230,255) 0%, rgb(108,42,255) 100%);
+    background: linear-gradient(135deg, rgb(230,230,255) 0%, rgb(108,42,255) 100%);
+    background-repeat: no-repeat;
 }
 
 #root {

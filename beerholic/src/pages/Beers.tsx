@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { BeerCard } from '../components/BeerCard'
 import { Loader } from '../components/Loader'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { initialData } from '../store/reducers/getInitialData'
@@ -15,9 +16,21 @@ const Beers: React.FC<BeersProps> = ({ }) => {
         dispatch(initialData())
     }, [dispatch])
     useEffect(() => { }, [beers])
-    console.log(beers)
     return (
-        <Loader />
+        <div className="beers">
+            <div className="beers_title">
+                <h1 className='beers_title'>beers</h1>
+
+                {beers ? (
+                    <div className="beers_grid">
+                        {(beers!.map(beer =>
+                            <React.Fragment key={beer.id}>
+                                <BeerCard beer={beer} />
+                            </React.Fragment>))}
+                    </div>
+                ) : <Loader />}
+            </div>
+        </div>
     )
 }
 
