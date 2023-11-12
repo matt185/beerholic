@@ -48,17 +48,18 @@
                 }
             }
         }
-        &_description{
-            p{
-                strong{
-                    text-transform: capitalize;
-                    color:$darkBrown;
-                }
+        p{
+            strong{
+                text-transform: capitalize;
+                color:$darkBrown;
             }
         }
         &_img{
             margin: 1rem;
             height: 150px;
+        }
+        &_description{
+            text-align: start;
         }
         hr{
             width: 70%;
@@ -74,6 +75,20 @@
                 list-style: outside ;
                 text-align: start !important;
             }
+        }
+        &_ingredients{
+            h3{
+                color: $darkBrown;
+                margin:0 0 1rem 0;
+            }
+            ul{
+                list-style: outside ;
+                text-align: start !important;
+            }
+        }
+        &_brewersTips{
+            margin:1rem 0 2rem 0;
+            text-align: start;
         }
     }
 }
