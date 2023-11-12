@@ -4,9 +4,15 @@ import { Beer } from '../types/beerType'
 
 interface BeerCardProps {
     beer: Beer
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
+    setBeer: React.Dispatch<React.SetStateAction<Beer | undefined>>
 }
 
-export const BeerCard: React.FC<BeerCardProps> = ({ beer }) => {
+export const BeerCard: React.FC<BeerCardProps> = ({ beer, setModalOpen, setBeer }) => {
+    const setModal = () => {
+        setModalOpen(true)
+        setBeer(beer)
+    }
     return (
         <div className="itemCard" >
             <div className="itemCard_header">
@@ -19,8 +25,7 @@ export const BeerCard: React.FC<BeerCardProps> = ({ beer }) => {
             <div className="itemCard_footer">
                 <div className="itemCard_footer_block"></div>
                 <h2 className='itemCard_footer_name'></h2>
-                <div className="itemCard_footer_block"><a>more</a></div>
-
+                <div className="itemCard_footer_block"><a onClick={() => setModal()}>more</a></div>
             </div>
         </div>
     )
