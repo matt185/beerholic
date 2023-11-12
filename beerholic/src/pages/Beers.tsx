@@ -4,7 +4,9 @@ import { BeerModal } from '../components/BeerModal'
 import { Loader } from '../components/Loader'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { initialData } from '../store/reducers/getInitialData'
+import { setBeers, setHaveMore, setPage } from '../store/slices/beerSlices'
 import { Beer } from '../types/beerType'
+import { apiSetting } from '../utils/api'
 
 interface BeersProps {
 
@@ -13,14 +15,26 @@ interface BeersProps {
 const Beers: React.FC<BeersProps> = ({ }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false)
     const [beer, setBeer] = useState<Beer | undefined>(undefined)
+    const [isLoading, setIsLoading] = useState<boolean>(true)
     const dispatch = useAppDispatch()
-    const { beers } = useAppSelector(({ beers }) => beers)
+    let { beers, page, haveMore } = useAppSelector(({ beers }) => beers)
 
+    const loadMore = async () => {
+        const data: Beer[] | undefined = await apiSetting.getBeers(page + 1)
+        if (data?.length !== 0) {
+            dispatch(setBeers(data))
+        } else {
+            dispatch(setHaveMore())
+        }
+    }
     useEffect(() => {
-        dispatch(initialData())
+        dispatch(initialData(page))
     }, [dispatch])
-    useEffect(() => { }, [beers, beer, modalOpen])
-    return (
+    useEffect(() => {
+        setIsLoading(false)
+    }, [beers, beer, modalOpen])
+    return (<>
+        {(isLoading) ? <Loader /> :
         <div className="beers">
             <div className="beers_title">
                 <h1 className='beers_title'>beers</h1>
@@ -32,12 +46,17 @@ const Beers: React.FC<BeersProps> = ({ }) => {
                                 <BeerCard beer={beer} setBeer={setBeer} setModalOpen={setModalOpen} />
                             </React.Fragment>))}
                     </div>
-                ) : <Loader />}
+                    ) : <Loader />}
+                    {isLoading ? <Loader /> : ""}
             </div>
-            <a href=""> load more</a>
+                {(haveMore) ? <a onClick={() => loadMore()}> load more</a> : ""}
             <BeerModal beer={beer} setBeer={setBeer} modalOpen={modalOpen} setModalOpen={setModalOpen} />
-        </div>
+            </div >
+
+        }
+    </>
     )
 }
 
 export default Beers
+

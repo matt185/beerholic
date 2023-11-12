@@ -59,6 +59,8 @@ export interface Beer{
 }
 
 export interface BeersInitialState {
+    page: number
+    haveMore:boolean
     beers: Beer[]|undefined
     beer:Beer|undefined
 }
