@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 import { Layout } from './components/Layout'
 import { Loader } from './components/Loader'
@@ -16,7 +16,7 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Routes>
           <Route element={<Beers />} path='/' />
-          <Route element={<Favorite />} path='/favorite' />
+          <Route element={<Favorite />} path='/favorites' />
           </Routes>
         </Suspense>
     </Layout>

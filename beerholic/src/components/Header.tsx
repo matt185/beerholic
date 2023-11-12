@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BiMenuAltRight } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 import { ISize } from '../types/generalTypes'
 
 interface HeaderProps {
@@ -35,15 +36,15 @@ export const Header: React.FC<HeaderProps> = ({ }) => {
         <header className="header">
             <div className="header_content">
                 <div className="header_content_logo">
-                    <a href="/">BeerHolic</a>
+                    <Link to="/">BeerHolic</Link>
                 </div>
                 <nav className={`${"header_content_nav"} ${menuOpen ? "isMenu" : ""}`}>
                     <ul>
                         <li>
-                            <a href="/">Beers</a>
+                            <Link to="/">Beers</Link>
                         </li>
                         <li>
-                            <a href="/favorite">Favorites</a>
+                            <Link to="/favorites">Favorites</Link>
                         </li>
                     </ul>
                 </nav>

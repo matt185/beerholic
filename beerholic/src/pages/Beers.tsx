@@ -27,7 +27,7 @@ const Beers: React.FC<BeersProps> = ({ }) => {
 
                 {beers ? (
                     <div className="beers_grid">
-                        {(beers!.map(beer =>
+                        {(beers!.map((beer: Beer) =>
                             <React.Fragment key={beer.id}>
                                 <BeerCard beer={beer} setBeer={setBeer} setModalOpen={setModalOpen} />
                             </React.Fragment>))}

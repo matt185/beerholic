@@ -60,5 +60,5 @@ export interface Beer{
 
 export interface BeersInitialState {
     beers: Beer[]|undefined
-    beer:Beer[]|undefined
+    beer:Beer|undefined
 }
