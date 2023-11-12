@@ -12,16 +12,14 @@ const Favorite = lazy(() => import('./pages/index').then(({ Favorites }) => ({ d
 
 function App() {
   return (
-    <BrowserRouter>
       <Layout>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route element={<Beers />} path='beerholic/' />
-            <Route element={<Favorite />} path='beerholic/favorite' />
+          <Route element={<Beers />} path='/' />
+          <Route element={<Favorite />} path='/favorite' />
           </Routes>
         </Suspense>
-      </Layout>
-    </BrowserRouter>
+    </Layout>
   );
 }
 
