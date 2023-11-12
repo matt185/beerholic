@@ -31,6 +31,7 @@ export const BeerModal: React.FC<BeerModalProps> = ({ beer, setBeer, modalOpen, 
                     <img className="itemModal_content_img" src={beer!.image_url} alt="" />
                     <div className="itemModal_content_description">
                         {beer!.description}
+                        <p><strong>tagline:</strong> {beer!.tagline}</p>
                     </div>
                     <hr />
                     <div className="itemModal_content_food">
