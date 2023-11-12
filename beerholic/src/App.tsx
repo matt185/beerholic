@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import { Layout } from './components/Layout'
+import { Loader } from './components/Loader'
+import './styles/index.scss';
+
+const Beers = lazy(() => import('./pages/index').then(({ Beers }) => ({ default: Beers })))
+const Favorite = lazy(() => import('./pages/index').then(({ Favorites }) => ({ default: Favorites })))
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route element={<Beers />} path='/' />
+            <Route element={<Favorite />} path='/favorite' />
+          </Routes>
+        </Suspense>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

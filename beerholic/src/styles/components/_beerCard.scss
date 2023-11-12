@@ -1,0 +1,92 @@
+@import '../variables.scss';
+
+.itemCard{
+    border: 0.1px solid $gray;
+    background-color: $light;
+    border-radius: 10px;
+    box-shadow: 5px 5px 11px 1px $dark;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 1rem;
+    max-height: 390px;
+
+    &_header{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3rem auto 3rem;
+        &_name{
+            text-align: center;
+            font-size: 2rem;
+            text-transform: capitalize;
+            color: $dark;;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include shadow-gray;
+        }
+        &_block{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            &_icon{
+                color: $dark;
+                font-size: 1.5rem;
+                
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+    &_img{
+        margin: 10px;
+        height: 100px;
+    }
+    &_description{
+        font-size: 1rem;
+        color: $dark;
+        text-shadow: none;
+        overflow-y: scroll ;
+        text-overflow: ellipsis;
+        height: 50%;
+    }
+    &_footer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3rem auto 3rem;
+         &_name{
+            text-align: center;
+            font-size: 2rem;
+            text-transform: capitalize;
+            color: $dark;;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include shadow-gray;
+        }
+          &_block{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            a{
+                width: 90% !important;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: end !important;
+                color: $purple !important;
+                text-decoration: underline !important;
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.05) !important;
+                }
+                
+            }
+        }   
+    }
+
+
+
+    
+}

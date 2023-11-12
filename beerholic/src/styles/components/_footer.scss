@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.footer{
+    color: $bg;
+    background-color: rgba($dark,0.9);
+    width: 100%;
+    height: $footerHeight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        .footer_copyright{
+            margin-right: 4px;
+        }
+        display: inline-flex;
+        align-items: center;
+        text-transform: capitalize;
+    }
+}
