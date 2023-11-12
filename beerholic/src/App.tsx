@@ -16,8 +16,8 @@ function App() {
       <Layout>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route element={<Beers />} path='/' />
-            <Route element={<Favorite />} path='/favorite' />
+            <Route element={<Beers />} path='beerholic/' />
+            <Route element={<Favorite />} path='beerholic/favorite' />
           </Routes>
         </Suspense>
       </Layout>

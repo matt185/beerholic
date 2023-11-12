@@ -40,10 +40,10 @@ export const Header: React.FC<HeaderProps> = ({ }) => {
                 <nav className={`${"header_content_nav"} ${menuOpen ? "isMenu" : ""}`}>
                     <ul>
                         <li>
-                            <a href="/">Beers</a>
+                            <a href="beerholic/">Beers</a>
                         </li>
                         <li>
-                            <a href="/favorite">Favorites</a>
+                            <a href="beerholic/favorite">Favorites</a>
                         </li>
                     </ul>
                 </nav>
