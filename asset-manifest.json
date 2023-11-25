@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/beerholic/static/css/main.9e8d60f9.css",
-    "main.js": "/beerholic/static/js/main.0abf3d23.js",
+    "main.css": "/beerholic/static/css/main.d6b81caf.css",
+    "main.js": "/beerholic/static/js/main.7a37c8c5.js",
     "index.html": "/beerholic/index.html",
-    "main.9e8d60f9.css.map": "/beerholic/static/css/main.9e8d60f9.css.map",
-    "main.0abf3d23.js.map": "/beerholic/static/js/main.0abf3d23.js.map"
+    "main.d6b81caf.css.map": "/beerholic/static/css/main.d6b81caf.css.map",
+    "main.7a37c8c5.js.map": "/beerholic/static/js/main.7a37c8c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e8d60f9.css",
-    "static/js/main.0abf3d23.js"
+    "static/css/main.d6b81caf.css",
+    "static/js/main.7a37c8c5.js"
   ]
 }
