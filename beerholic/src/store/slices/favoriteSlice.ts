@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { FavoriteBeerInitialState } from '../../types/beerType'
 
 const getInitialValue = () => {
     const localFavorite: string | null = window.localStorage.getItem('beerholicFavorite');
@@ -12,7 +13,7 @@ const getInitialValue = () => {
     return []
 }
 
-const initialState = {
+const initialState:FavoriteBeerInitialState = {
     favoritesBeer:getInitialValue()
 }
 export const favoriteSlice = createSlice({
@@ -21,8 +22,8 @@ export const favoriteSlice = createSlice({
     reducers: {
         addFavorites: (state, actions) => {
             const beer = actions.payload
-            state.favoritesBeer.favorites.push(actions.payload)
-            state.favoritesBeer.favoriteId.push(beer.id)
+            state.favoritesBeer.favorites!.push(actions.payload)
+            state.favoritesBeer.favoriteId!.push(beer.id)
             const favoriteList = window.localStorage.getItem('beerholicFavorite')
             if (favoriteList) {
                 const list = JSON.parse(favoriteList)
@@ -35,10 +36,10 @@ export const favoriteSlice = createSlice({
         },
         removeFavorites: (state, actions) => {
             const id = actions.payload
-            const idx = state.favoritesBeer.favoriteId.indexOf(id)
+            const idx = state.favoritesBeer.favoriteId!.indexOf(id)
             console.log(id, idx)
-            state.favoritesBeer.favorites.splice(idx, 1)
-            state.favoritesBeer.favoriteId.splice(idx, 1)
+            state.favoritesBeer.favorites!.splice(idx, 1)
+            state.favoritesBeer.favoriteId!.splice(idx, 1)
             const favoriteList = window.localStorage.getItem('beerholicFavorite')
             if (favoriteList) { 
                 const list = JSON.parse(favoriteList)

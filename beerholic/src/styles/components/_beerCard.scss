@@ -1,22 +1,22 @@
 @import '../variables.scss';
 
-.itemCard{
+.itemCard {
     border: 0.1px solid $gray;
-    // background-color: $light;
     background-color: $lgYellow;
     border-radius: 10px;
     box-shadow: 5px 5px 11px 1px $dark;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     padding: 1rem;
-    max-height: 390px;
+    height: 390px;
 
-    &_header{
+    &_header {
         width: 100%;
         display: grid;
         grid-template-columns: 3rem auto 3rem;
-        &_name{
+
+        &_name {
             text-align: center;
             font-size: 2rem;
             text-transform: capitalize;
@@ -26,68 +26,73 @@
             text-overflow: ellipsis;
             @include shadow-gray;
         }
-        &_block{
+
+        &_block {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            &_icon{
+
+            &_icon {
                 color: $darkBrown;
                 font-size: 1.5rem;
-                
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                     transform: scale(1.15);
                 }
             }
         }
     }
-    &_img{
+
+    &_img {
         margin: 10px;
         height: 100px;
     }
-    &_description{
+
+    &_description {
         font-size: 1rem;
         color: $dark;
         text-shadow: none;
-        overflow-y: scroll ;
+        overflow-y: scroll;
         text-overflow: ellipsis;
         height: 50%;
     }
-    &_footer{
+
+    &_footer {
         width: 100%;
         display: grid;
         grid-template-columns: 3rem auto 3rem;
-         &_name{
+
+        &_name {
             text-align: center;
             font-size: 2rem;
             text-transform: capitalize;
-            color: $dark;;
+            color: $dark;
+            ;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
             @include shadow-gray;
         }
-          &_block{
+
+        &_block {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            a{
+
+            a {
                 width: 90% !important;
                 font-size: 1rem;
                 font-weight: bold;
                 text-align: end !important;
                 color: $brown !important;
                 text-decoration: underline !important;
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                     transform: scale(1.05) !important;
                 }
-                
             }
-        }   
+        }
     }
-
-
-
-    
 }

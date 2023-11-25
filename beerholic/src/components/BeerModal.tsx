@@ -10,13 +10,14 @@ interface BeerModalProps {
 }
 
 export const BeerModal: React.FC<BeerModalProps> = ({ beer, setBeer, modalOpen, setModalOpen }) => {
+
     const resetModal = () => {
         setBeer(undefined)
         setModalOpen(false)
     }
+
     return (<>
         {modalOpen && (
-
             <div className="itemModal">
                 <div className="itemModal_content">
                     <div className="itemModal_content_header">
@@ -48,14 +49,11 @@ export const BeerModal: React.FC<BeerModalProps> = ({ beer, setBeer, modalOpen, 
                             <li><strong>Malt: </strong> {beer!.ingredients.malt.map(hop => hop.name).join(', ')}</li>
                             <li><strong>yeast: </strong> {beer!.ingredients.yeast}</li>
                         </ul>
-
                     </div>
                     <p className="itemModal_content_brewersTips"> {beer!.brewers_tips}</p>
                     <p><strong>first brewed: </strong>{beer!.first_brewed}</p>
-
                 </div>
             </div>
-
         )}
     </>
     )

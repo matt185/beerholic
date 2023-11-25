@@ -8,11 +8,8 @@ import { setBeers, setHaveMore, setPage } from '../store/slices/beerSlices'
 import { Beer } from '../types/beerType'
 import { apiSetting } from '../utils/api'
 
-interface BeersProps {
 
-}
-
-const Beers: React.FC<BeersProps> = ({ }) => {
+const Beers: React.FC = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false)
     const [beer, setBeer] = useState<Beer | undefined>(undefined)
     const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -27,18 +24,19 @@ const Beers: React.FC<BeersProps> = ({ }) => {
             dispatch(setHaveMore())
         }
     }
+
     useEffect(() => {
         dispatch(initialData(page))
     }, [dispatch])
+
     useEffect(() => {
         setIsLoading(false)
     }, [beers, beer, modalOpen])
+
     return (<>
         {(isLoading) ? <Loader /> :
-        <div className="beers">
-            <div className="beers_title">
+            <div className="beers">
                 <h1 className='beers_title'>beers</h1>
-
                 {beers ? (
                     <div className="beers_grid">
                         {(beers!.map((beer: Beer) =>
@@ -46,13 +44,11 @@ const Beers: React.FC<BeersProps> = ({ }) => {
                                 <BeerCard beer={beer} setBeer={setBeer} setModalOpen={setModalOpen} />
                             </React.Fragment>))}
                     </div>
-                    ) : <Loader />}
-                    {isLoading ? <Loader /> : ""}
-            </div>
+                ) : <Loader />}
+                {isLoading ? <Loader /> : ""}
                 {(haveMore) ? <a onClick={() => loadMore()}> load more</a> : ""}
-            <BeerModal beer={beer} setBeer={setBeer} modalOpen={modalOpen} setModalOpen={setModalOpen} />
+                <BeerModal beer={beer} setBeer={setBeer} modalOpen={modalOpen} setModalOpen={setModalOpen} />
             </div >
-
         }
     </>
     )

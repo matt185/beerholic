@@ -1,10 +1,6 @@
 import React from 'react'
 
-interface LoaderProps {
-
-}
-
-export const Loader: React.FC<LoaderProps> = ({ }) => {
+export const Loader: React.FC = () => {
     return (
         <div className="spinner"></div>
     )

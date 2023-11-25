@@ -3,11 +3,8 @@ import { BiMenuAltRight } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { ISize } from '../types/generalTypes'
 
-interface HeaderProps {
 
-}
-
-export const Header: React.FC<HeaderProps> = ({ }) => {
+export const Header: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false)
     const [size, setSize] = useState<ISize>({
         width: undefined,

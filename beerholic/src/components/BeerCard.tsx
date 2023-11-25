@@ -1,7 +1,7 @@
 import React from 'react'
-import { AiFillStar, AiOutlineStar} from 'react-icons/ai'
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { addFavorites,removeFavorites } from '../store/slices/favoriteSlice'
+import { addFavorites, removeFavorites } from '../store/slices/favoriteSlice'
 import { Beer } from '../types/beerType'
 
 interface BeerCardProps {
@@ -11,19 +11,22 @@ interface BeerCardProps {
 }
 
 export const BeerCard: React.FC<BeerCardProps> = ({ beer, setModalOpen, setBeer }) => {
+    
     const setModal = () => {
         setModalOpen(true)
         setBeer(beer)
     }
     const dispatch = useAppDispatch()
     const { favoritesBeer } = useAppSelector(({ favorite }) => favorite)
+
     const addNewFavorite = () => {
         dispatch(addFavorites(beer))
     }
+
     const removeFromFavorite = () => {
         dispatch(removeFavorites(beer.id))
     }
-   console.log(favoritesBeer.favoriteId) 
+
     return (
         <div className="itemCard" >
             <div className="itemCard_header">
