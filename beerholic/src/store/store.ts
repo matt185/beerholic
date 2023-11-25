@@ -1,10 +1,12 @@
 
 import {configureStore,ThunkAction,Action} from '@reduxjs/toolkit'
 import { beerSlice } from './slices/beerSlices'
+import { favoriteSlice } from './slices/favoriteSlice'
 
 export const store = configureStore({
     reducer: {
-        beers: beerSlice.reducer
+        beers: beerSlice.reducer,
+        favorite:favoriteSlice.reducer
     }
 })
 
