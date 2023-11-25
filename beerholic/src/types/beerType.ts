@@ -64,3 +64,11 @@ export interface BeersInitialState {
     beers: Beer[]|undefined
     beer:Beer|undefined
 }
+
+interface FavoritesData{
+    favorites: Beer[] | undefined
+    favoriteId:number[] | undefined
+}
+export interface FavoriteBeerInitialState{
+    favoritesBeer:FavoritesData
+}
