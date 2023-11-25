@@ -1,6 +1,7 @@
 @import '../variables.scss';
 
 .favorite{
+    background-color: transparent;
     width: 100%;
     min-height: calc(100vh - #{$headerHeight}-#{$footerHeight});
     padding: 0 5% 0 5%;

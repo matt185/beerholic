@@ -7,9 +7,11 @@
 }
 
 .layout_body {
+    background-color: transparent;
     margin-top: $headerHeight;
     margin-bottom: $footerHeight;
     height: calc(100vh - #{$headerHeight}-#{$footerHeight});
+    overflow-y: scroll;
     width: 100%;
     display: flex;
     justify-content: center;
