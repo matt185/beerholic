@@ -8,14 +8,14 @@ import { Beer } from '../types/beerType'
 const Favorites: React.FC= () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false)
     const [beer, setBeer] = useState<Beer | undefined>(undefined)
-    const { favoritesBeer } = useAppSelector(({ favorite })=>favorite)
+    const { favorites } = useAppSelector(({ favorite })=>favorite)
 
     return (
         <div className="favorite">
             <h1 className="favorite_title">Favorite</h1>
-            {(favoritesBeer.favorites?.length!==0 )?
+            {(favorites?.length!==0 )?
                 <div className="favorite_grid">
-                    {(favoritesBeer.favorites!.map((beer: Beer) =>
+                    {(favorites!.map((beer: Beer) =>
                         <React.Fragment key={beer.id}>
                             <BeerCard beer={beer} setBeer={setBeer} setModalOpen={setModalOpen} />
                         </React.Fragment>))}
