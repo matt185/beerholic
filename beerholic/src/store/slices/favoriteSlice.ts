@@ -2,21 +2,24 @@ import { createSlice } from '@reduxjs/toolkit'
 import { FavoritesInitialData } from '../../types/beerType'
 import { favoriteInitialData } from '../reducers/getFavoriteInitialData'
 
-// const getInitialValue = () => {
-//     const localFavorite: string | null = window.localStorage.getItem('beerholicFavorite');
-//     if (localFavorite) {
-//         return JSON.parse(localFavorite)
-//     }
-//     window.localStorage.setItem("beerholicFavorite", JSON.stringify({
-//         favorites: [],
-//         favoriteId:[]
-//     }))
-//     return []
-// }
+const getInitialValue = () => {
+    const localFavorite: string | null = window.localStorage.getItem('beerholicFavorite');
+    if (localFavorite) {
+        return JSON.parse(localFavorite)
+    }
+    window.localStorage.setItem("beerholicFavorite", JSON.stringify({
+        favorites: [],
+        favoriteId:[]
+    }))
+    return {
+        favorites: [],
+        favoriteId:[]
+    }
+}
 
 const initialState:FavoritesInitialData = {
-    favorites:[],
-    favoriteId:[]
+    favorites:getInitialValue().favorites,
+    favoriteId:getInitialValue().favoriteId
 }
 export const favoriteSlice = createSlice({
     name: 'favorite',
