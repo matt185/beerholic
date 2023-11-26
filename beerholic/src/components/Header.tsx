@@ -38,10 +38,10 @@ export const Header: React.FC = () => {
                 <nav className={`${"header_content_nav"} ${menuOpen ? "isMenu" : ""}`}>
                     <ul>
                         <li>
-                            <Link to="/">Beers</Link>
+                            <Link to="/" onClick={menuToggleHandler}>Beers</Link>
                         </li>
                         <li>
-                            <Link to="/favorites">Favorites</Link>
+                            <Link to="/favorites" onClick={menuToggleHandler}>Favorites</Link>
                         </li>
                     </ul>
                 </nav>
