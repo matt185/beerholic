@@ -7,9 +7,7 @@
 }
 
 .layout_body {
-    position: relative;
-    z-index: -13;
-    top: $headerHeight;
+    margin-top: $headerHeight;
     overflow-y: scroll;
     background-color: transparent;
     margin-bottom: $footerHeight;
