@@ -17,7 +17,7 @@ export const BeerCard: React.FC<BeerCardProps> = ({ beer, setModalOpen, setBeer 
         setBeer(beer)
     }
     const dispatch = useAppDispatch()
-    const { favoritesBeer } = useAppSelector(({ favorite }) => favorite)
+    const { favoriteId } = useAppSelector(({ favorite }) => favorite)
 
     const addNewFavorite = () => {
         dispatch(addFavorites(beer))
@@ -33,7 +33,7 @@ export const BeerCard: React.FC<BeerCardProps> = ({ beer, setModalOpen, setBeer 
                 <div className="itemCard_header_block"></div>
                 <h2 className='itemCard_header_name'>{beer.name}</h2>
                 <div className="itemCard_header_block">
-                    {(favoritesBeer && favoritesBeer!.favoriteId!.includes(beer!.id)) ?
+                    {(favoriteId && favoriteId!.includes(beer!.id)) ?
                         <AiFillStar className="itemCard_header_block_icon" onClick={removeFromFavorite} /> :
                         <AiOutlineStar className="itemCard_header_block_icon" onClick={addNewFavorite} />}
                 </div>
